@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: marp-action
+        env:
+          MARP_ARGS: "-I slides/ --output dist/" # this is the important line change since our marp command is different from the standard one
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          PUBLISH_TO_BRANCH: main
+          BASE_URL: https://99linesofcode.github.io/tdd-presentaties/
+        uses: ralexander-phi/marp-action@0.2
