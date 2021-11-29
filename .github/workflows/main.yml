@@ -31,10 +31,10 @@ jobs:
 
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         GITHUB_REPOSITORY: ${{ github.repository }}
-        PUBLISH_TO_BRANCH: master
+        PUBLISH_TO_BRANCH: main
         
         # You'll want to set this to your domain
-        BASE_URL: https://alexsci.com/test-marp-action/
+        BASE_URL: https://99linesofcode.github.io/tdd-presentaties/
 
       # consider using a tagged release here
       # https://docs.github.com/en/actions/reference/workflow-syntax-for-github-actions#jobsjob_idstepsuses
